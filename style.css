@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: monospace, 'Poppins', sans-serif;
+}
+
+body h2 {
+    text-align: center;
+    font-family: 'Creepster', cursive;
+    font-size: 3rem;
+    color: rgb(142, 68, 173);
+    text-shadow: 2px 2px 4px black;
+    letter-spacing: 2px;
+    filter: drop-shadow(0 0 10px purple);
+    cursor: pointer;
+}
+
+/* Styling Card Container that will hold all cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    margin: 20px;
+    font-family: monospace;
+    width: 90%;
+    margin: 10px auto;
+}
+
+
+.flip-card {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 2s;
+    /*Smooth change of direction*/
+    transform-style: preserve-3d;
+    /* To make sure it maintain and bring out the back text*/
+
+}
+
+/* Styling Both back and front to be in absolute and same position */
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+/* Styling the image */
+.flip-card-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling the Back Card */
+.flip-card-back {
+    background-color: rgb(142, 68, 173);
+    width: 100%;
+    height: 100%;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 0 10px;
+    line-height: 18px;
+}
+
+.flip-card-front {
+    background-color: white;
+
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    margin: 0 20px;
+    transition: 2s;
+}
+
+.flip-card:hover p {
+    opacity: 0;
+    pointer-events: none;
+    /* optional, to make it non-interactive */
+}
+
+p {
+    background-color: wheat;
+    position: absolute;
+    z-index: 2;
+    top: 85%;
+    width: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    transition: opacity 2s ease;
+    opacity: 1;
+    /* starting state */
+}
+
+/* .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+   */
+/* Flip on hover */
+/* .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  } */
+
+/* .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+  } */
+
+/* Front side */
+/* .flip-card-front {
+    background-color: #fff;
+  } */
+
+/* Back side */
+/* .flip-card-back {
+    background-color: blueviolet;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+  } */
